@@ -60,3 +60,32 @@ function evenOdd(a)
     return false;
 }
 multipleCallback(power,divide,evenOdd);
+
+//eg 4
+function print(name,callback)
+{
+    console.log("My name is ");
+    callback(name);
+}
+function printname(name)
+{
+    console.log(name);
+}
+setTimeout(print,2000,"Astha",printname);
+
+//eg 5
+function work()
+{
+    setTimeout(()=>{
+        console.log("started")
+
+        setTimeout(()=>{
+           console.log("doing")
+
+           setTimeout(()=>{
+            console.log("Completed")
+        },2000);
+    },3000);
+},5000);
+}
+work();
